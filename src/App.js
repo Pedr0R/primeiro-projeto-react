@@ -1,16 +1,19 @@
 import './App.css';
+import HelloWorld from './components/HelloWorld';
+import SayMyName from './components/SayMyName';
+import Pessoa from './components/Pessoa';
 
 function App() {
 const name = 'Pedro';
 
 const newname = 'newname'
-const url = 'https://via.placeholder.com/150'
+const url = 'data:image/png;base64,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'
 
   return (
     <div className="App">
-      <h1>Olá {name}</h1>
-      <p>Meu primeiro app</p>
-      <img src={url} alt='minha img'/>
+      <img src={url} alt='minha img '/>
+      <SayMyName nome="Pedro"></SayMyName>
+      <Pessoa nome="André" idade="32" profissão="Recruiter" foto="https://via.placeholder.com/200"/>
     </div>
   );
 }
